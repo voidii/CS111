@@ -1,0 +1,48 @@
+LateX and Numpy
+
+HW:30%
+MIDTERM:40%
+FINAL:30%
+
+Application of computational science
+  Urban complex systems and other data sciences
+  computational finance
+  computational biology
+  computational science in engineering
+  
+Python Crash Crouse
+  Comments: #
+  Important statement: import library
+    Example:
+      import math
+      f = math.factorial(N)
+      
+      import math as m
+      *******
+  Basic variable types: int, str, float, bool(True/False)
+  Other variable types: list(can have different type of element), turples(it is not changable)
+    List example:
+      l = [1, 2, 'x']
+    Turples example
+      t = (1, 2, 3)
+  Easy to convert from one type to another
+    Example:
+      a = 2
+      b = str(a)
+      print b
+      "2"
+  Input, always gets a string as a input
+  Conditionals
+  For-loops
+    Example:
+      for x in (1, 2, 3): # for x in range(11):
+        print(x)
+  While loop
+  Functions
+  File I/O
+  
+Useful Modules:
+  math
+  numoy
+  matplotlib
+  sicpy
