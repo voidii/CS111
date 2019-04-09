@@ -1,0 +1,55 @@
+# 矩阵乘法 前面的横向，后面的竖向
+A*I = I*A 
+***Diagonal Matrix:
+D = {[2 0 0 0], [0 1 0 0], [ 0 0 -2 0], [0 0 0 -1]}
+A = {[1 2 3 4], [5 6 7 8], [9 10 11 12], [13 14 15 16]}
+
+D*A = [2 4 6 8 // 5 6 7 8 // -18 -20 -22 -24 // -13 -14 -15 -16] row of A is being mutiple
+A*D = [2 2 -6 -4 // 10 6 -14 -8 // 18 10 -22 -12 // 26 14 -30 -16] coloumn of A is being 
+
+***Permutation Matrics
+P=I matrix but rearranged rows like P = [0 1 0 // 1 0 0 // 0 0 1]
+
+[0 1 0 // 1 0 0 // 0 0 1] * [1 2 3 // 4 5 6 // 7 8 9] = [4 5 6 // 1 2 3 // 7 8 9]
+
+P*A will rearrange the rows of A
+a*p WILL rearrange the colume of A
+
+***Transpose operation on Matrices
+if A = A^T, we call A symmetrical matrix 
+
+***Invertible Matrices(n*n matrices)
+
+A square matrix A is invertible if and only if:
+    det(A) is not zero 
+    if det(A) = 0, then A is called singular and cannot be inverted
+    
+(AB)^(-1) = B^T * A^T
+
+***Python demo
+
+I = np.eye(5) // 5*5 I 矩阵
+
+print(A@I) //矩阵乘法
+
+D=np.diag([1,2,3,4]) //对角矩阵
+
+(D@A).T //transpose 矩阵 
+
+print(A[4,:])//取A的第四行数字
+
+vec = np.random.permutation(5)
+I = np.eye(5)
+P = I[vec,:] //P 将是一个被rearranged row了的I，这个syntax会rearrange I
+P = I[,:vce] // rearrange colume
+
+***Naive algorithm for 矩阵乘法
+def mm (A. B, n):
+    C = np.empty([n, n])
+    for i in range(n):
+        for j inrange(n):
+            sum = 0
+            for k in range(n):
+                sum = sum + A[i, k]*B[k. j]
+            C[i, j] = sum
+    return C
