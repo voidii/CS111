@@ -1,0 +1,64 @@
+#Matrix Factorization
+
+LU factorization
+  using pivots
+  without pivoting
+  when no-poviting doesnt work
+  
+*******
+
+A = LU
+
+A = [2 7 1 8 // 1 5.5 8.5 5 // 0 1 12 2.5 // -1 -4.5 -4.5 3.5]
+doing some reduction: A = [2 7 1 8 // 0 2 8 1 // 0 0 8 2 // 0 0 0 8]
+  R2 = R2 - 0.5R1
+  R3 = R3 - 0.5R2
+  R4 = R4 + 0.5R1 + 0.5R2
+  So A = LU = [1 0 0 0 // 0.5 1 0 0 // 0 0.5 1 0 // -0.5 -0.5 0 1] * [2 7 1 8 // 0 2 8 1 // 0 0 8 2 // 0 0 0 8]
+  
+another example
+  [1 2 3 // 1 1 1 // -1 1 2] R0, R1, R2
+  step one: compare R1 to R0
+  step two: determine the multiple for row reduction
+  
+  R1 = R1 - R0: [1 2 3 // 0 -1 -2 // -1 1 2]
+  R2 = R2 + R0 + 3R1: [1 2 3 // 0 -1 -2 // 0 0 -5]
+  
+  Code part:
+    m, n = A.shape
+    assert m == n, "input matrix A must be square"
+    #make a copy of matrix
+    LU = A.astype(np.float64).cpoy()
+    
+    #elimination process
+    for piv_col in range(n):
+      #update the rest of the matrix
+      *******回家复习这段代码
+      
+If A = [0 1 // 1 2]就没有pivot因为对角上有一个0，最好flip them to [1 2 // 0 1]    
+
+
+Cholesky Factorization
+  symmetric and quare matrix A
+  A is positive definite (eigenvalue is positive)
+  
+  A = R^T R
+  example:
+  [a 0 // b c]*[a b // 0 c] = [a^2 ab // ab b^2+c^2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
