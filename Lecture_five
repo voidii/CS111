@@ -1,0 +1,53 @@
+##SPD Mtarices
+
+SPD = symmetrical positive definite 
+  positive numbers 
+    when multiply SPD with a vector, its direction stays similar
+    
+  SPD shows up a lot in 统计, control system designs, 热传导 
+  
+Characteristics of SPD
+
+  x^T*Ax > 0
+  its eigenvalues are > 0
+  LU factorization without pivoting succeeds, with all pivots < 0
+  
+Cholesky factorization
+
+  We can factor A into X^TX
+  
+  cholesky factorization (R)
+  
+Eginvalue: λ1 + λ2 = sum of diagonal
+           λ1 * λ2 = ad - bc
+           
+QR fac
+
+A = QR, where Q is an orthogonal matrix based on A
+  Q^TQ = QQ^T = I
+  
+  R is an upper yriangle martix 
+    A = QR -> Q^A = Q^TQR -> R = Q^TA
+    
+////////////////////////////////////////////////////////
+
+A = [1 2 4 // 0 0 5 // 0 3 6] a1 a2 a3
+
+Q = [| | | // q1 q2 q3 // | | |]
+
+q1 = a1/|a1| = [1 // 0 // 0]
+
+q'2 = [2 // 0 // 3] = (a2*q1)q1 = [2 // 0 // 3] - [2 // 0 // 0] = [0 // 0 // 3]
+                      此处点乘
+q2 = q'2/|q'2| = [0 // 0 // 1]                      
+
+q3 = a3 = (prof of a3 onto q1 and q2)
+q'3 = a3 - (a3*q1)q1 - (a3*q2)q2 = [4 // 5 // 6] -4[1 // 0 // 0] -6[0 // 0 // 1]
+q3 = q'3/|q'3| = [0 // 1 // 0]
+
+R = Q^TA = [1 2 4 // 0 3 6// 0 0 5]
+
+SO A = QR
+...........................
+
+Numerical stability
