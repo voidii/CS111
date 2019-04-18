@@ -1,0 +1,7 @@
+#condition number
+
+in python we have numpy.lingalg.cond(M, 'fro')
+
+The temperature problem:cabin in the snow 
+    Poisson's equation
+    Stencil computation
