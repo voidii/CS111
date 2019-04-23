@@ -1,0 +1,45 @@
+***
+Ax=b solution:
+  pivoting
+  LU factorization
+  Cholesky
+  QR Factorization
+  
+Now, Jacobi Method
+  An iterative algorithm for determining the solutions of a diagonally dominant system of linear equation
+  Simple, but not most eficient alogo
+  Nowm given a system Ax=b:
+  
+  We can start with a guess for x:
+    good starting point is zero vector
+    call it x^(0)
+    
+  we will need to find new value with the equation amd yhe current value of x_2, x_3... to find x^(k+1)
+
+Example: A = [3 1 // -2 4], b = [9 8]
+  now x should be [2 3]
+  x_1 = (9 - x_2)/3
+  x_2 = (8 + 2x_1)/4
+
+  take a guess x^(0) = [0 0]
+  so x_1 = 9/3 = 3
+     x_2 = 8/4 = 2
+     so x^(1) = [3 2]
+  absolute errer =  ||e^(1)|| = || x - x^(1) || = sqrt(2)
+  
+  keep pluging in
+  x_1(2) = (9 - x_2(1))/3 = 2.33333...
+  x_2(2) = (8+2x_1(1))/4 = 3.5
+  
+  we can get x^(3), x^(4) ... it will keep getting closer to the answer
+  
+Another Example: A = [4 -1 -1 // -2 6 1 // -1 1 7], b = [3 9 -6], x = [1 2 -1]
+  https://zh.wikipedia.org/wiki/%E9%9B%85%E5%8F%AF%E6%AF%94%E6%B3%95
+  
+
+
+
+
+
+
+
